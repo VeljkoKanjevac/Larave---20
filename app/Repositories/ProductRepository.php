@@ -40,4 +40,9 @@ class ProductRepository
                 'image' => $request->get('image')
             ]);
         }
+
+        public function orderProductsById()
+        {
+           return $this->productModel->orderBy('id', 'desc')->take(6)->get();
+        }
 }
